@@ -1,0 +1,17 @@
+- defaults:
+          link:
+                  create: true
+                  relink: true
+
+- clean: ["~"]
+
+- link:
+          ~/.config/yazi/: ./yazi
+          ~/.config/fastfetch/: ./fastfetch
+          ~/.zsh:
+          ~/.zshenv: ./zsh/zshenv
+          ~/.zshrc: ./zsh/zshrc
+          ~/.zimrc: ./zsh/zimrc
+
+- shell:
+          - [git submodule update --init --recursive, Installing submodules]
