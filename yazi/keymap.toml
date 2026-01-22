@@ -3,14 +3,41 @@
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 
-#my plugins
-
+#my keymap configuration
 [mgr]
 prepend_keymap = [
+	# Compress
+	{ on = [
+		"c",
+		"a",
+		"a",
+	], run = "plugin compress", desc = "Archive selected files" },
+	{ on = [
+		"c",
+		"a",
+		"p",
+	], run = "plugin compress -p", desc = "Archive selected files (password)" },
+	{ on = [
+		"c",
+		"a",
+		"h",
+	], run = "plugin compress -ph", desc = "Archive selected files (password+header)" },
+	{ on = [
+		"c",
+		"a",
+		"l",
+	], run = "plugin compress -l", desc = "Archive selected files (compression level)" },
+	{ on = [
+		"c",
+		"a",
+		"u",
+	], run = "plugin compress -phl", desc = "Archive selected files (password+header+level)" },
+
+	# Smart enter
 	{ on = "l", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
 	{ on = "<Enter>", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
 	{ on = "<Right>", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
-	{ on = "S", run = 'shell "$SHELL" --block --confitm', desc = "Open shell in this file" },
+	{ on = "S", run = 'shell "$SHELL" --block --confirm', desc = "Open shell in this file" },
 ]
 
 keymap = [
